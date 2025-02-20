@@ -14,6 +14,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Install Google Test (GTest)
+      - name: Install Google Test
+        run: |
+          sudo apt-get install -y libgtest-dev
+          sudo apt-get install -y cmake # GTest requires cmake
+
+          # Build and install Google Test manually
+          cd /usr/src/gtest
+          sudo cmake CMakeLists.txt
+          sudo make
+          sudo cp *.a /usr/lib
+
       # Clean the build directory to remove previous CMake cache
       - name: Clean the build directory
         run: |
