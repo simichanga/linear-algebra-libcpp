@@ -14,11 +14,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Install dependencies (including GTest and CMake)
+      # Install dependencies (including CMake, GCC, and GTest)
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake g++ libgtest-dev
+          
+          # Install GCC 13 for C++23 support (C++23 may not be default on Ubuntu)
+          sudo apt-get install -y gcc-13 g++-13
+
+          # Update alternatives to use GCC 13 as default
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 100
+          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
+          sudo update-alternatives --config gcc
+          sudo update-alternatives --config g++
 
       # Clean the build directory to remove previous CMake cache
       - name: Clean the build directory
@@ -26,10 +35,10 @@ jobs:
           rm -rf build
           mkdir build
 
-      # Configure the project with CMake
+      # Configure the project with CMake and specify C++23
       - name: Configure the project with CMake
         run: |
-          cmake -S . -B build -DBUILD_TESTS=ON
+          cmake -S . -B build -DBUILD_TESTS=ON -DCMAKE_CXX_STANDARD=23
 
       # Build the project
       - name: Build the project
