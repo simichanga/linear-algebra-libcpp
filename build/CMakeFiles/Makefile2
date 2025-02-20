@@ -107,11 +107,13 @@ src/clean:
 # Recursive "all" directory target.
 tests/all: tests/CMakeFiles/test_vector.dir/all
 tests/all: tests/CMakeFiles/test_block_matrix.dir/all
+tests/all: tests/CMakeFiles/test_hybrid_vector.dir/all
 .PHONY : tests/all
 
 # Recursive "codegen" directory target.
 tests/codegen: tests/CMakeFiles/test_vector.dir/codegen
 tests/codegen: tests/CMakeFiles/test_block_matrix.dir/codegen
+tests/codegen: tests/CMakeFiles/test_hybrid_vector.dir/codegen
 .PHONY : tests/codegen
 
 # Recursive "preinstall" directory target.
@@ -121,6 +123,7 @@ tests/preinstall:
 # Recursive "clean" directory target.
 tests/clean: tests/CMakeFiles/test_vector.dir/clean
 tests/clean: tests/CMakeFiles/test_block_matrix.dir/clean
+tests/clean: tests/CMakeFiles/test_hybrid_vector.dir/clean
 .PHONY : tests/clean
 
 #=============================================================================
@@ -130,7 +133,7 @@ tests/clean: tests/CMakeFiles/test_block_matrix.dir/clean
 tests/CMakeFiles/test_vector.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_vector.dir/build.make tests/CMakeFiles/test_vector.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_vector.dir/build.make tests/CMakeFiles/test_vector.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/simi/Dev/linear-algebra-lib/build/CMakeFiles --progress-num=3,4 "Built target test_vector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/simi/Dev/linear-algebra-lib/build/CMakeFiles --progress-num=5,6 "Built target test_vector"
 .PHONY : tests/CMakeFiles/test_vector.dir/all
 
 # Build rule for subdir invocation for target.
@@ -147,7 +150,7 @@ test_vector: tests/CMakeFiles/test_vector.dir/rule
 # codegen rule for target.
 tests/CMakeFiles/test_vector.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_vector.dir/build.make tests/CMakeFiles/test_vector.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/simi/Dev/linear-algebra-lib/build/CMakeFiles --progress-num=3,4 "Finished codegen for target test_vector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/simi/Dev/linear-algebra-lib/build/CMakeFiles --progress-num=5,6 "Finished codegen for target test_vector"
 .PHONY : tests/CMakeFiles/test_vector.dir/codegen
 
 # clean rule for target.
@@ -186,6 +189,38 @@ tests/CMakeFiles/test_block_matrix.dir/codegen:
 tests/CMakeFiles/test_block_matrix.dir/clean:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_block_matrix.dir/build.make tests/CMakeFiles/test_block_matrix.dir/clean
 .PHONY : tests/CMakeFiles/test_block_matrix.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/test_hybrid_vector.dir
+
+# All Build rule for target.
+tests/CMakeFiles/test_hybrid_vector.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/simi/Dev/linear-algebra-lib/build/CMakeFiles --progress-num=3,4 "Built target test_hybrid_vector"
+.PHONY : tests/CMakeFiles/test_hybrid_vector.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/test_hybrid_vector.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/simi/Dev/linear-algebra-lib/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_hybrid_vector.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/simi/Dev/linear-algebra-lib/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/test_hybrid_vector.dir/rule
+
+# Convenience name for target.
+test_hybrid_vector: tests/CMakeFiles/test_hybrid_vector.dir/rule
+.PHONY : test_hybrid_vector
+
+# codegen rule for target.
+tests/CMakeFiles/test_hybrid_vector.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/simi/Dev/linear-algebra-lib/build/CMakeFiles --progress-num=3,4 "Finished codegen for target test_hybrid_vector"
+.PHONY : tests/CMakeFiles/test_hybrid_vector.dir/codegen
+
+# clean rule for target.
+tests/CMakeFiles/test_hybrid_vector.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/clean
+.PHONY : tests/CMakeFiles/test_hybrid_vector.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

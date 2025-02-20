@@ -19,6 +19,9 @@ cmake -S . -B $BUILD_DIR -DBUILD_TESTS=ON
 echo "Building the project..."
 cmake --build $BUILD_DIR
 
+# Link the compilation database
+ln -s build/compile_commands.json compile_commands.json
+
 # Run the tests
 echo "Running tests..."
 cd $BUILD_DIR

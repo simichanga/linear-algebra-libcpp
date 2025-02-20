@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Enable compile_commands.json for clang lsp server
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Add the library
 add_subdirectory(src)
 

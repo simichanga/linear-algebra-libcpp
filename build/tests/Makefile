@@ -199,6 +199,20 @@ test_block_matrix/fast:
 	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_block_matrix.dir/build.make tests/CMakeFiles/test_block_matrix.dir/build
 .PHONY : test_block_matrix/fast
 
+# Convenience name for target.
+tests/CMakeFiles/test_hybrid_vector.dir/rule:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_hybrid_vector.dir/rule
+.PHONY : tests/CMakeFiles/test_hybrid_vector.dir/rule
+
+# Convenience name for target.
+test_hybrid_vector: tests/CMakeFiles/test_hybrid_vector.dir/rule
+.PHONY : test_hybrid_vector
+
+# fast build rule for target.
+test_hybrid_vector/fast:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/build
+.PHONY : test_hybrid_vector/fast
+
 test_block_matrix.o: test_block_matrix.cpp.o
 .PHONY : test_block_matrix.o
 
@@ -222,6 +236,30 @@ test_block_matrix.s: test_block_matrix.cpp.s
 test_block_matrix.cpp.s:
 	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_block_matrix.dir/build.make tests/CMakeFiles/test_block_matrix.dir/test_block_matrix.cpp.s
 .PHONY : test_block_matrix.cpp.s
+
+test_hybrid_vector.o: test_hybrid_vector.cpp.o
+.PHONY : test_hybrid_vector.o
+
+# target to build an object file
+test_hybrid_vector.cpp.o:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/test_hybrid_vector.cpp.o
+.PHONY : test_hybrid_vector.cpp.o
+
+test_hybrid_vector.i: test_hybrid_vector.cpp.i
+.PHONY : test_hybrid_vector.i
+
+# target to preprocess a source file
+test_hybrid_vector.cpp.i:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/test_hybrid_vector.cpp.i
+.PHONY : test_hybrid_vector.cpp.i
+
+test_hybrid_vector.s: test_hybrid_vector.cpp.s
+.PHONY : test_hybrid_vector.s
+
+# target to generate assembly for a file
+test_hybrid_vector.cpp.s:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/test_hybrid_vector.cpp.s
+.PHONY : test_hybrid_vector.cpp.s
 
 test_vector.o: test_vector.cpp.o
 .PHONY : test_vector.o
@@ -261,10 +299,14 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... test_block_matrix"
+	@echo "... test_hybrid_vector"
 	@echo "... test_vector"
 	@echo "... test_block_matrix.o"
 	@echo "... test_block_matrix.i"
 	@echo "... test_block_matrix.s"
+	@echo "... test_hybrid_vector.o"
+	@echo "... test_hybrid_vector.i"
+	@echo "... test_hybrid_vector.s"
 	@echo "... test_vector.o"
 	@echo "... test_vector.i"
 	@echo "... test_vector.s"

@@ -197,6 +197,19 @@ test_block_matrix/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_block_matrix.dir/build.make tests/CMakeFiles/test_block_matrix.dir/build
 .PHONY : test_block_matrix/fast
 
+#=============================================================================
+# Target rules for targets named test_hybrid_vector
+
+# Build rule for target.
+test_hybrid_vector: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hybrid_vector
+.PHONY : test_hybrid_vector
+
+# fast build rule for target.
+test_hybrid_vector/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/build
+.PHONY : test_hybrid_vector/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,6 +224,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... test_block_matrix"
+	@echo "... test_hybrid_vector"
 	@echo "... test_vector"
 .PHONY : help
 
