@@ -14,39 +14,42 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Install dependencies (including CMake, GCC, and GTest)
+      # Install dependencies (including CMake, GTest, and GCC 14.2.1)
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y cmake g++ libgtest-dev
-          
-          # Install GCC 13 for C++23 support (C++23 may not be default on Ubuntu)
-          sudo apt-get install -y gcc-13 g++-13
+          sudo apt-get install -y cmake libgtest-dev
 
-          # Update alternatives to use GCC 13 as default
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 100
-          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
+          # Install GCC 14.2.1 from external sources or build from source
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+          sudo apt-get update
+          sudo apt-get install -y gcc-14 g++-14
+
+          # Update alternatives to use GCC 14.2.1 as default
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100
+          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100
           sudo update-alternatives --config gcc
           sudo update-alternatives --config g++
-      
-      # Check GCC version
+
+      # Print GCC version to verify correct version is being used
       - name: Check GCC version
         run: |
           gcc --version
           g++ --version
-      
+
       # Clean the build directory to remove previous CMake cache
       - name: Clean the build directory
         run: |
           rm -rf build
           mkdir build
 
-      # Set GCC 13 for CMake and specify C++23 standard
+      # Set GCC 14.2.1 for CMake and specify C++20 standard
       - name: Configure the project with CMake
         run: |
-          export CC=/usr/bin/gcc-13
-          export CXX=/usr/bin/g++-13
-          cmake -S . -B build -DBUILD_TESTS=ON -DCMAKE_CXX_STANDARD=23
+          export CC=/usr/bin/gcc-14
+          export CXX=/usr/bin/g++-14
+          cmake -S . -B build -DBUILD_TESTS=ON -DCMAKE_CXX_STANDARD=20
 
       # Build the project
       - name: Build the project
