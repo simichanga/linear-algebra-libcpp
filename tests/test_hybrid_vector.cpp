@@ -1,9 +1,10 @@
+
 #include <gtest/gtest.h>
 #include <linear_algebra/hybrid_vector.hpp>
 
 TEST(HybridVectorTest, SmallVector) {
-    linear_algebra::HybridVector<double, 32> v1(10);
-    linear_algebra::HybridVector<double, 32> v2(10);
+    linear_algebra::HybridVector<float, 32> v1(10);
+    linear_algebra::HybridVector<float, 32> v2(10);
 
     for (std::size_t i = 0; i < 10; ++i) {
         v1[i] = i;
@@ -15,12 +16,13 @@ TEST(HybridVectorTest, SmallVector) {
         EXPECT_EQ(v3[i], 3 * i);
     }
 
-    EXPECT_EQ(dot(v1, v2), 570); // 0*0 + 1*2 + 2*4 + ... + 9*18 = 570
+    EXPECT_EQ(dot(v1, v2), 570);
+    EXPECT_EQ(linear_algebra::dot_simd(v1, v2), 570);
 }
 
 TEST(HybridVectorTest, LargeVector) {
-    linear_algebra::HybridVector<double, 32> v1(100);
-    linear_algebra::HybridVector<double, 32> v2(100);
+    linear_algebra::HybridVector<float, 32> v1(100);
+    linear_algebra::HybridVector<float, 32> v2(100);
 
     for (std::size_t i = 0; i < 100; ++i) {
         v1[i] = i;
@@ -32,5 +34,37 @@ TEST(HybridVectorTest, LargeVector) {
         EXPECT_EQ(v3[i], 3 * i);
     }
 
-    EXPECT_EQ(dot(v1, v2), 2 * 99 * 100 * 199 / 6); // Sum of 2*i^2 for i=0 to 99
+    EXPECT_EQ(dot(v1, v2), 2 * 99 * 100 * 199 / 6);
+    EXPECT_EQ(linear_algebra::dot_simd(v1, v2), 2 * 99 * 100 * 199 / 6);
 }
+
+TEST(HybridVectorTest, SIMDAlignment) {
+    linear_algebra::HybridVector<float, 32> v1(16);
+    linear_algebra::HybridVector<float, 32> v2(16);
+
+    for (std::size_t i = 0; i < 16; ++i) {
+        v1[i] = i + 1;
+        v2[i] = (i + 1) * 2;
+    }
+
+    float expected_dot = dot(v1, v2);
+    float simd_result = linear_algebra::dot_simd(v1, v2);
+
+    EXPECT_NEAR(simd_result, expected_dot, 1e-5);
+}
+
+TEST(HybridVectorTest, UnevenSizeVector) {
+    linear_algebra::HybridVector<float, 32> v1(15);
+    linear_algebra::HybridVector<float, 32> v2(15);
+
+    for (std::size_t i = 0; i < 15; ++i) {
+        v1[i] = i;
+        v2[i] = i * 3;
+    }
+
+    float expected_dot = dot(v1, v2);
+    float simd_result = linear_algebra::dot_simd(v1, v2);
+
+    EXPECT_NEAR(simd_result, expected_dot, 1e-5);
+}
+

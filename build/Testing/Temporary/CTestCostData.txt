@@ -1,4 +1,4 @@
-test_vector 1 0.00275523
-test_block_matrix 1 0.00248091
-test_hybrid_vector 1 0.00298411
+test_vector 1 0.00364099
+test_block_matrix 1 0.00278381
+test_hybrid_vector 1 0.00241671
 ---
