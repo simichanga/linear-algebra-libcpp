@@ -1,4 +1,4 @@
-name: CI
+name: Build and Test
 
 on:
   push:
@@ -9,30 +9,23 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build_and_test:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up CMake
-        uses: actions/setup-cmake@v3
+    - name: Set up Fish shell
+      uses: fish-shell/setup-fish-shell@v1
 
-      - name: Set up C++ toolchain
-        uses: actions/setup-cpp@v1
-        with:
-          compiler: gcc # or clang
-          version: 13 # or 16 for Clang
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake g++ fish
 
-      - name: Create build directory
-        run: mkdir -p build
+    - name: Run build and test script
+      run: |
+        chmod +x build_and_test.sh
+        ./build_and_test.sh
 
-      - name: Configure CMake
-        run: cmake -S . -B build -DBUILD_TESTS=ON
-
-      - name: Build project
-        run: cmake --build build
-
-      - name: Run tests
-        run: cd build && ctest --output-on-failure
