@@ -35,9 +35,11 @@ jobs:
           rm -rf build
           mkdir build
 
-      # Configure the project with CMake and specify C++23
+      # Set GCC 13 for CMake and specify C++23 standard
       - name: Configure the project with CMake
         run: |
+          export CC=/usr/bin/gcc-13
+          export CXX=/usr/bin/g++-13
           cmake -S . -B build -DBUILD_TESTS=ON -DCMAKE_CXX_STANDARD=23
 
       # Build the project
