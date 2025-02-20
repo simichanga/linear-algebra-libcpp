@@ -4,28 +4,33 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
-  build_and_test:
+  build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      # Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Fish shell
-      uses: fish-shell/setup-fish-shell@v2
+      # Continue with your CMake steps
+      - name: Configure the project with CMake
+        run: |
+          mkdir -p build
+          cmake -S . -B build -DBUILD_TESTS=ON
 
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y cmake g++ fish
+      # Build the project
+      - name: Build the project
+        run: |
+          cmake --build build
 
-    - name: Run build and test script
-      run: |
-        chmod +x build_and_test.sh
-        ./build_and_test.sh
+      # Run the tests
+      - name: Run tests
+        run: |
+          cd build
+          ctest --output-on-failure
 
+      # Final message
+      - name: Build and test process completed
+        run: echo "Build and test process completed successfully!"
