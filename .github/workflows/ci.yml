@@ -14,10 +14,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Clean the build directory to remove previous CMake cache
+      - name: Clean the build directory
+        run: |
+          rm -rf build
+          mkdir build
+      
       # Continue with your CMake steps
       - name: Configure the project with CMake
         run: |
-          mkdir -p build
           cmake -S . -B build -DBUILD_TESTS=ON
 
       # Build the project
