@@ -28,7 +28,13 @@ jobs:
           sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
           sudo update-alternatives --config gcc
           sudo update-alternatives --config g++
-
+      
+      # Check GCC version
+      - name: Check GCC version
+        run: |
+          gcc --version
+          g++ --version
+      
       # Clean the build directory to remove previous CMake cache
       - name: Clean the build directory
         run: |
