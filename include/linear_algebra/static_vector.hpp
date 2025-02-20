@@ -7,14 +7,14 @@
 namespace linear_algebra {
 
 template <typename T, std::size_t N>
-class Vector {
+class StaticVector {
 public:
     // Default constructor
-    constexpr Vector() = default;
+    constexpr StaticVector() = default;
 
     // Constructor for brace initialization
     template <typename... Args>
-    constexpr Vector(Args... args) : data_{args...} {
+    constexpr StaticVector(Args... args) : data_{args...} {
         static_assert(sizeof...(Args) == N, "Number of arguments must match vector size.");
     }
 
@@ -25,15 +25,15 @@ public:
     }
 
     // Arithmetic operations
-    constexpr Vector operator+(const Vector& other) const {
-        Vector result;
+    constexpr StaticVector operator+(const StaticVector& other) const {
+        StaticVector result;
         for (std::size_t i = 0; i < N; ++i) {
             result[i] = (*this)[i] + other[i];
         }
         return result;
     }
 
-    constexpr T dot(const Vector& other) const {
+    constexpr T dot(const StaticVector& other) const {
         T result{};
         for (std::size_t i = 0; i < N; ++i) {
             result += (*this)[i] * other[i];
