@@ -1,0 +1,74 @@
+Start testing: Feb 20 03:33 EET
+----------------------------------------------------------
+1/2 Testing: test_vector
+1/2 Test: test_vector
+Command: "/home/simi/Dev/linear-algebra-lib/build/tests/test_vector"
+Directory: /home/simi/Dev/linear-algebra-lib/build/tests
+"test_vector" start time: Feb 20 03:33 EET
+Output:
+----------------------------------------------------------
+Running main() from /usr/src/debug/gtest/googletest-1.15.2/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from VectorTest
+[ RUN      ] VectorTest.AccessOperator
+[       OK ] VectorTest.AccessOperator (0 ms)
+[ RUN      ] VectorTest.Addition
+[       OK ] VectorTest.Addition (0 ms)
+[ RUN      ] VectorTest.DotProduct
+[       OK ] VectorTest.DotProduct (0 ms)
+[ RUN      ] VectorTest.ConstAccessOperator
+[       OK ] VectorTest.ConstAccessOperator (0 ms)
+[----------] 4 tests from VectorTest (0 ms total)
+
+[----------] 1 test from VectorTestDifferentSize
+[ RUN      ] VectorTestDifferentSize.Operations
+[       OK ] VectorTestDifferentSize.Operations (0 ms)
+[----------] 1 test from VectorTestDifferentSize (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_vector" end time: Feb 20 03:33 EET
+"test_vector" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: test_block_matrix
+2/2 Test: test_block_matrix
+Command: "/home/simi/Dev/linear-algebra-lib/build/tests/test_block_matrix"
+Directory: /home/simi/Dev/linear-algebra-lib/build/tests
+"test_block_matrix" start time: Feb 20 03:33 EET
+Output:
+----------------------------------------------------------
+Running main() from /usr/src/debug/gtest/googletest-1.15.2/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from BlockMatrixTest
+[ RUN      ] BlockMatrixTest.SubscriptOperator
+[       OK ] BlockMatrixTest.SubscriptOperator (0 ms)
+[ RUN      ] BlockMatrixTest.Addition
+[       OK ] BlockMatrixTest.Addition (0 ms)
+[ RUN      ] BlockMatrixTest.Multiplication
+[       OK ] BlockMatrixTest.Multiplication (0 ms)
+[ RUN      ] BlockMatrixTest.Transpose
+[       OK ] BlockMatrixTest.Transpose (0 ms)
+[ RUN      ] BlockMatrixTest.OutOfRangeAccess
+[       OK ] BlockMatrixTest.OutOfRangeAccess (0 ms)
+[----------] 5 tests from BlockMatrixTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_block_matrix" end time: Feb 20 03:33 EET
+"test_block_matrix" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 20 03:33 EET
