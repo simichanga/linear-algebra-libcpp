@@ -14,27 +14,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Install Google Test (GTest)
-      - name: Install Google Test
+      # Install dependencies (including GTest and CMake)
+      - name: Install dependencies
         run: |
-          sudo apt-get install -y libgtest-dev
-          sudo apt-get install -y cmake # GTest requires cmake
-
-          # Build and install Google Test manually
-          cd /usr/src/gtest
-          sudo cmake CMakeLists.txt
-          sudo make
-          
-          # Instead of copying from the wrong directory, specify the correct one
-          sudo cp /usr/src/gtest/build/lib/*.a /usr/lib
+          sudo apt-get update
+          sudo apt-get install -y cmake g++ libgtest-dev
 
       # Clean the build directory to remove previous CMake cache
       - name: Clean the build directory
         run: |
           rm -rf build
           mkdir build
-      
-      # Continue with your CMake steps
+
+      # Configure the project with CMake
       - name: Configure the project with CMake
         run: |
           cmake -S . -B build -DBUILD_TESTS=ON
@@ -53,3 +45,4 @@ jobs:
       # Final message
       - name: Build and test process completed
         run: echo "Build and test process completed successfully!"
+
