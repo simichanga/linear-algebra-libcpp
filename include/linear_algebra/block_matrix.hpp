@@ -15,11 +15,13 @@ private:
     std::size_t cols_;
     std::vector<std::vector<std::unique_ptr<T[]>>> blocks_;
 
-    constexpr std::pair<std::size_t, std::size_t> get_block_indices(std::size_t i, std::size_t j) const {
+    [[nodiscard]]
+    static constexpr std::pair<std::size_t, std::size_t> get_block_indices(const std::size_t i, const std::size_t j) {
         return {i / BlockSize, j / BlockSize};
     }
 
-    constexpr std::pair<std::size_t, std::size_t> get_in_block_indices(std::size_t i, std::size_t j) const {
+    [[nodiscard]]
+    static constexpr std::pair<std::size_t, std::size_t> get_in_block_indices(const std::size_t i, const std::size_t j) {
         return {i % BlockSize, j % BlockSize};
     }
     
@@ -37,16 +39,49 @@ private:
         }
     }
 
+    // Helper function to set an element at (i, j) within the blocks
+    void set_element(const std::size_t i, const std::size_t j, const T& value) {
+        auto [block_row, block_col] = get_block_indices(i, j);
+        auto [in_block_row, in_block_col] = get_in_block_indices(i, j);
+        blocks_[block_row][block_col][in_block_row * BlockSize + in_block_col] = value;
+    }
+
 
 public:
-    BlockMatrix(std::size_t rows, std::size_t cols)
+    BlockMatrix(std::initializer_list<std::initializer_list<T>> init_list) {
+        if (init_list.size() == 0) {
+            rows_ = 0;
+            cols_ = 0;
+            return; // Handle empty initialization
+        }
+
+        rows_ = init_list.size();
+        cols_ = init_list.begin()->size();
+
+        allocate_blocks(); // Call allocate_blocks first
+
+        size_t row_idx = 0;
+        for (const auto& row_init : init_list) {
+            if (row_init.size() != cols_) {
+                throw std::invalid_argument("Rows in initializer list must have consistent sizes.");
+            }
+            size_t col_idx = 0;
+            for (const T& element : row_init) {
+                set_element(row_idx, col_idx, element); // Use the helper function
+                col_idx++;
+            }
+            row_idx++;
+        }
+    }
+
+    BlockMatrix(const std::size_t rows, const std::size_t cols)
         : rows_(rows), cols_(cols) { allocate_blocks(); }
 
     BlockMatrix()
         : BlockMatrix(0, 0) {}
 
-    T get_rows() const { return rows_; }
-    T get_cols() const { return cols_; }
+    auto get_rows() const { return rows_; }
+    auto get_cols() const { return cols_; }
 
     template <typename Self>
     constexpr decltype(auto) operator[](this Self&& self, std::size_t i, std::size_t j) {
@@ -98,5 +133,5 @@ public:
     }
 };
 
-} // namespace linear_algebra
+}
 

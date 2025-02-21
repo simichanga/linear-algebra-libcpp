@@ -1,13 +1,19 @@
 find_package(GTest REQUIRED)
 
-add_executable(test_static_vector test_static_vector.cpp)
-add_executable(test_block_matrix test_block_matrix.cpp)
-add_executable(test_hybrid_vector test_hybrid_vector.cpp)
+set(TEST_DIRECTORIES block_matrix static_vector) # TODO: add hybrid_vector later on
 
-target_link_libraries(test_static_vector PRIVATE linear_algebra GTest::GTest GTest::Main)
-target_link_libraries(test_block_matrix PRIVATE linear_algebra GTest::GTest GTest::Main)
-target_link_libraries(test_hybrid_vector PRIVATE linear_algebra GTest::GTest GTest::Main)
+foreach(TEST_DIR ${TEST_DIRECTORIES})
+    file(GLOB TEST_FILES "${TEST_DIR}/*.cpp")
 
-add_test(NAME test_static_vector COMMAND test_static_vector)
-add_test(NAME test_block_matrix COMMAND test_block_matrix)
-add_test(NAME test_hybrid_vector COMMAND test_block_matrix)
+    foreach(TEST_FILE ${TEST_FILES})
+        # Extract the test name (without the path and extension)
+        get_filename_component(TEST_NAME "${TEST_FILE}" NAME_WE)  # Use CMake's built-in function
+
+        # Construct the executable name (e.g., test_block_matrix_initializer_list)
+        set(EXECUTABLE_NAME test_${TEST_DIR}_${TEST_NAME})
+
+        add_executable(${EXECUTABLE_NAME} ${TEST_FILE})
+        target_link_libraries(${EXECUTABLE_NAME} PRIVATE linear_algebra GTest::GTest GTest::Main)
+        add_test(NAME ${EXECUTABLE_NAME} COMMAND ${EXECUTABLE_NAME})
+    endforeach()
+endforeach()

@@ -14,7 +14,7 @@ public:
 
     // Constructor for brace initialization
     template <typename... Args>
-    constexpr StaticVector(Args... args) : data_{args...} {
+    constexpr explicit StaticVector(Args... args) : data_{args...} {
         static_assert(sizeof...(Args) == N, "Number of arguments must match vector size.");
     }
 
@@ -45,4 +45,4 @@ private:
     std::array<T, N> data_{};
 };
 
-} // namespace linear_algebra
+}

@@ -28,7 +28,21 @@ namespace linear_algebra {
       if constexpr (std::is_same_v<StorageType, std::vector<T>>)
         data_.resize(size);
       else if (size > SmallSize)
-        throw std::out_of_range("Vector size exceeds small size limit.");
+        data_ = std::vector<T>(size);
+      else
+        data_ = std::array<T, SmallSize>();
+    }
+
+    HybridVector(std::size_t size, const T& initial_value)
+      : HybridVector(size) { data_.fill(initial_value); }
+
+    HybridVector(std::initializer_list<T> init)
+      : HybridVector(init.size())
+    {
+      std::size_t i = 0;
+      for (const auto& value : init) {
+        data_[i++] = value;
+      }
     }
 
     template <typename Self>
@@ -38,8 +52,8 @@ namespace linear_algebra {
       return std::forward<Self>(self).data_[index];
     }
 
-    constexpr std::size_t size() const noexcept { return size_; }
-    
+    [[nodiscard]] constexpr std::size_t size() const noexcept { return size_; }
+
     constexpr void resize(std::size_t new_size) {
       if constexpr (requires { data_.resize(new_size); }) {
         data_.resize(new_size);
@@ -53,19 +67,9 @@ namespace linear_algebra {
       }
     }
 
-    // Forwarding references in arithmetic operations
-    template <typename V1, typename V2>
-    friend constexpr auto operator+(V1&& v1, V2&& v2)
-      requires  std::same_as<std::remove_cvref_t<V1>, HybridVector> &&
-                std::same_as<std::remove_cvref_t<V2>, HybridVector> 
-    {
-      HybridVector result(v1.size());
-      for (std::size_t i = 0; i < v1.size(); ++i)
-        result[i] = std::forward<V1>(v1)[i] + std::forward<V2>(v2)[i];
-      return result;
-    }
+    // Add a type alias for value_type
+    using value_type = T;
 
-    
     template <typename V> // More generic
     constexpr auto dot(const HybridVector<V>& other) const {
       if (size() != other.size()) {
@@ -82,27 +86,51 @@ namespace linear_algebra {
     }
   };
 
-  template <typename T>
-  T dot_simd(const HybridVector<T>& a, const HybridVector<T>& b) {
-    if (a.size() != b.size())
+  template <typename T1, std::size_t S1, typename T2, std::size_t S2>
+  constexpr auto operator+(const HybridVector<T1, S1>& v1, const HybridVector<T2, S2>& v2) {
+    using ResultType = std::common_type_t<T1, T2>; // Determine the result type
+    constexpr std::size_t ResultSmallSize = (S1 <= S2) ? S1 : S2; // Use the smaller block size
+
+    if (v1.size() != v2.size()) {
+      throw std::invalid_argument("Vector sizes must match for addition.");
+    }
+
+    HybridVector<ResultType, ResultSmallSize> result(v1.size());
+    for (std::size_t i = 0; i < v1.size(); ++i) {
+      result[i] = v1[i] + v2[i];
+    }
+    return result;
+  }
+
+  template <typename T, std::size_t SmallSize>
+T dot_simd(const HybridVector<T, SmallSize>& a, const HybridVector<T, SmallSize>& b) {
+    if (a.size() != b.size()) {
       throw std::invalid_argument("Vector sizes must match for dot product.");
+    }
+
     T result{};
     std::size_t i = 0;
+
     // Process 8 elements at a time (AVX2)
     if constexpr (std::is_same_v<T, float>) {
       __m256 sum = _mm256_setzero_ps();
       for (; i + 8 <= a.size(); i += 8) {
-        __m256 va = _mm256_loadu_ps(&a[i]); 
-        __m256 vb = _mm256_loadu_ps(&b[i]); 
+        __m256 va = _mm256_loadu_ps(&a[i]);
+        __m256 vb = _mm256_loadu_ps(&b[i]);
         sum = _mm256_add_ps(sum, _mm256_mul_ps(va, vb));
       }
       alignas(32) float temp[8];
       _mm256_store_ps(temp, sum);
-      for (std::size_t j = 0; j < 8; ++j)
+      for (std::size_t j = 0; j < 8; ++j) {
         result += temp[j];
+      }
     }
-    for (; i < a.size(); ++i)
+
+    // Process remaining elements
+    for (; i < a.size(); ++i) {
       result += a[i] * b[i];
+    }
+
     return result;
   }
 }
