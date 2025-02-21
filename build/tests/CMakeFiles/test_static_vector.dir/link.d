@@ -1,8 +1,8 @@
-test_vector: \
+test_static_vector: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o \
-  CMakeFiles/test_vector.dir/test_vector.cpp.o \
+  CMakeFiles/test_static_vector.dir/test_static_vector.cpp.o \
   /usr/lib/libgtest_main.so.1.15.2 \
   /usr/lib/libgtest.so.1.15.2 \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libstdc++.so \
@@ -39,7 +39,7 @@ test_vector: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o:
 
-CMakeFiles/test_vector.dir/test_vector.cpp.o:
+CMakeFiles/test_static_vector.dir/test_static_vector.cpp.o:
 
 /usr/lib/libgtest_main.so.1.15.2:
 

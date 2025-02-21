@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/test_static_vector.dir/link.d CMakeFiles/test_static_vector.dir/test_static_vector.cpp.o -o test_static_vector  /usr/lib/libgtest_main.so.1.15.2 /usr/lib/libgtest.so.1.15.2

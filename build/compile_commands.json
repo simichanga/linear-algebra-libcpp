@@ -1,9 +1,9 @@
 [
 {
   "directory": "/home/simi/Dev/linear-algebra-lib/build/tests",
-  "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/simi/Dev/linear-algebra-lib/include -std=c++23 -mavx2 -o CMakeFiles/test_vector.dir/test_vector.cpp.o -c /home/simi/Dev/linear-algebra-lib/tests/test_vector.cpp",
-  "file": "/home/simi/Dev/linear-algebra-lib/tests/test_vector.cpp",
-  "output": "tests/CMakeFiles/test_vector.dir/test_vector.cpp.o"
+  "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/simi/Dev/linear-algebra-lib/include -std=c++23 -mavx2 -o CMakeFiles/test_static_vector.dir/test_static_vector.cpp.o -c /home/simi/Dev/linear-algebra-lib/tests/test_static_vector.cpp",
+  "file": "/home/simi/Dev/linear-algebra-lib/tests/test_static_vector.cpp",
+  "output": "tests/CMakeFiles/test_static_vector.dir/test_static_vector.cpp.o"
 },
 {
   "directory": "/home/simi/Dev/linear-algebra-lib/build/tests",
@@ -16,5 +16,11 @@
   "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/simi/Dev/linear-algebra-lib/include -std=c++23 -mavx2 -o CMakeFiles/test_hybrid_vector.dir/test_hybrid_vector.cpp.o -c /home/simi/Dev/linear-algebra-lib/tests/test_hybrid_vector.cpp",
   "file": "/home/simi/Dev/linear-algebra-lib/tests/test_hybrid_vector.cpp",
   "output": "tests/CMakeFiles/test_hybrid_vector.dir/test_hybrid_vector.cpp.o"
+},
+{
+  "directory": "/home/simi/Dev/linear-algebra-lib/build/benchmarks",
+  "command": "/usr/bin/c++  -I/home/simi/Dev/linear-algebra-lib/include -std=c++23 -mavx2 -o CMakeFiles/vector_matrix_benchmarks.dir/vector_matrix_benchmark.cpp.o -c /home/simi/Dev/linear-algebra-lib/benchmarks/vector_matrix_benchmark.cpp",
+  "file": "/home/simi/Dev/linear-algebra-lib/benchmarks/vector_matrix_benchmark.cpp",
+  "output": "benchmarks/CMakeFiles/vector_matrix_benchmarks.dir/vector_matrix_benchmark.cpp.o"
 }
 ]

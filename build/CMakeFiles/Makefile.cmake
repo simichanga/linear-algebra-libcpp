@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/simi/Dev/linear-algebra-lib/CMakeLists.txt"
+  "/home/simi/Dev/linear-algebra-lib/benchmarks/CMakeLists.txt"
   "CMakeFiles/3.31.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.31.5/CMakeSystem.cmake"
   "/home/simi/Dev/linear-algebra-lib/src/CMakeLists.txt"
@@ -16,6 +17,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/cmake/GTest/GTestConfigVersion.cmake"
   "/usr/lib/cmake/GTest/GTestTargets-none.cmake"
   "/usr/lib/cmake/GTest/GTestTargets.cmake"
+  "/usr/lib/cmake/benchmark/benchmarkConfig.cmake"
+  "/usr/lib/cmake/benchmark/benchmarkConfigVersion.cmake"
+  "/usr/lib/cmake/benchmark/benchmarkTargets-none.cmake"
+  "/usr/lib/cmake/benchmark/benchmarkTargets.cmake"
   "/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in"
   "/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
@@ -124,11 +129,13 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "benchmarks/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "tests/CMakeFiles/test_vector.dir/DependInfo.cmake"
+  "tests/CMakeFiles/test_static_vector.dir/DependInfo.cmake"
   "tests/CMakeFiles/test_block_matrix.dir/DependInfo.cmake"
   "tests/CMakeFiles/test_hybrid_vector.dir/DependInfo.cmake"
+  "benchmarks/CMakeFiles/vector_matrix_benchmarks.dir/DependInfo.cmake"
   )

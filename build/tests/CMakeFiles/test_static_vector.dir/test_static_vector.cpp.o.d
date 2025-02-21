@@ -1,5 +1,5 @@
-tests/CMakeFiles/test_vector.dir/test_vector.cpp.o: \
- /home/simi/Dev/linear-algebra-lib/tests/test_vector.cpp \
+tests/CMakeFiles/test_static_vector.dir/test_static_vector.cpp.o: \
+ /home/simi/Dev/linear-algebra-lib/tests/test_static_vector.cpp \
  /usr/include/stdc-predef.h /usr/include/gtest/gtest.h \
  /usr/include/c++/14.2.1/cstddef \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -279,4 +279,4 @@ tests/CMakeFiles/test_vector.dir/test_vector.cpp.o: \
  /usr/include/gtest/gtest-test-part.h \
  /usr/include/gtest/gtest-typed-test.h \
  /usr/include/gtest/gtest_pred_impl.h /usr/include/gtest/gtest_prod.h \
- /home/simi/Dev/linear-algebra-lib/include/linear_algebra/vector.hpp
+ /home/simi/Dev/linear-algebra-lib/include/linear_algebra/static_vector.hpp

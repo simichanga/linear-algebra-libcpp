@@ -1,4 +1,3 @@
-
 #include <gtest/gtest.h>
 #include <linear_algebra/hybrid_vector.hpp>
 
@@ -16,7 +15,7 @@ TEST(HybridVectorTest, SmallVector) {
         EXPECT_EQ(v3[i], 3 * i);
     }
 
-    EXPECT_EQ(dot(v1, v2), 570);
+    EXPECT_EQ(v1.dot(v2), 570);        // Call dot on v1 (or v2)
     EXPECT_EQ(linear_algebra::dot_simd(v1, v2), 570);
 }
 
@@ -34,7 +33,7 @@ TEST(HybridVectorTest, LargeVector) {
         EXPECT_EQ(v3[i], 3 * i);
     }
 
-    EXPECT_EQ(dot(v1, v2), 2 * 99 * 100 * 199 / 6);
+    EXPECT_EQ(v1.dot(v2), 2 * 99 * 100 * 199 / 6);  // Call dot on v1 (or v2)
     EXPECT_EQ(linear_algebra::dot_simd(v1, v2), 2 * 99 * 100 * 199 / 6);
 }
 
@@ -47,7 +46,7 @@ TEST(HybridVectorTest, SIMDAlignment) {
         v2[i] = (i + 1) * 2;
     }
 
-    float expected_dot = dot(v1, v2);
+    float expected_dot = v1.dot(v2);   // Call dot on v1 (or v2)
     float simd_result = linear_algebra::dot_simd(v1, v2);
 
     EXPECT_NEAR(simd_result, expected_dot, 1e-5);
@@ -62,9 +61,8 @@ TEST(HybridVectorTest, UnevenSizeVector) {
         v2[i] = i * 3;
     }
 
-    float expected_dot = dot(v1, v2);
+    float expected_dot = v1.dot(v2);   // Call dot on v1 (or v2)
     float simd_result = linear_algebra::dot_simd(v1, v2);
 
     EXPECT_NEAR(simd_result, expected_dot, 1e-5);
 }
-

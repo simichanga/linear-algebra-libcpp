@@ -172,17 +172,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_vector
+# Target rules for targets named test_static_vector
 
 # Build rule for target.
-test_vector: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_vector
-.PHONY : test_vector
+test_static_vector: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_static_vector
+.PHONY : test_static_vector
 
 # fast build rule for target.
-test_vector/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_vector.dir/build.make tests/CMakeFiles/test_vector.dir/build
-.PHONY : test_vector/fast
+test_static_vector/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_static_vector.dir/build.make tests/CMakeFiles/test_static_vector.dir/build
+.PHONY : test_static_vector/fast
 
 #=============================================================================
 # Target rules for targets named test_block_matrix
@@ -210,6 +210,19 @@ test_hybrid_vector/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/build
 .PHONY : test_hybrid_vector/fast
 
+#=============================================================================
+# Target rules for targets named vector_matrix_benchmarks
+
+# Build rule for target.
+vector_matrix_benchmarks: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vector_matrix_benchmarks
+.PHONY : vector_matrix_benchmarks
+
+# fast build rule for target.
+vector_matrix_benchmarks/fast:
+	$(MAKE) $(MAKESILENT) -f benchmarks/CMakeFiles/vector_matrix_benchmarks.dir/build.make benchmarks/CMakeFiles/vector_matrix_benchmarks.dir/build
+.PHONY : vector_matrix_benchmarks/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -225,7 +238,8 @@ help:
 	@echo "... test"
 	@echo "... test_block_matrix"
 	@echo "... test_hybrid_vector"
-	@echo "... test_vector"
+	@echo "... test_static_vector"
+	@echo "... vector_matrix_benchmarks"
 .PHONY : help
 
 

@@ -1,30 +1,30 @@
-Start testing: Feb 20 18:11 EET
+Start testing: Feb 21 15:18 EET
 ----------------------------------------------------------
-1/3 Testing: test_vector
-1/3 Test: test_vector
-Command: "/home/simi/Dev/linear-algebra-lib/build/tests/test_vector"
+1/3 Testing: test_static_vector
+1/3 Test: test_static_vector
+Command: "/home/simi/Dev/linear-algebra-lib/build/tests/test_static_vector"
 Directory: /home/simi/Dev/linear-algebra-lib/build/tests
-"test_vector" start time: Feb 20 18:11 EET
+"test_static_vector" start time: Feb 21 15:18 EET
 Output:
 ----------------------------------------------------------
 Running main() from /usr/src/debug/gtest/googletest-1.15.2/googletest/src/gtest_main.cc
 [==========] Running 5 tests from 2 test suites.
 [----------] Global test environment set-up.
-[----------] 4 tests from VectorTest
-[ RUN      ] VectorTest.AccessOperator
-[       OK ] VectorTest.AccessOperator (0 ms)
-[ RUN      ] VectorTest.Addition
-[       OK ] VectorTest.Addition (0 ms)
-[ RUN      ] VectorTest.DotProduct
-[       OK ] VectorTest.DotProduct (0 ms)
-[ RUN      ] VectorTest.ConstAccessOperator
-[       OK ] VectorTest.ConstAccessOperator (0 ms)
-[----------] 4 tests from VectorTest (0 ms total)
+[----------] 4 tests from StaticVectorTest
+[ RUN      ] StaticVectorTest.AccessOperator
+[       OK ] StaticVectorTest.AccessOperator (0 ms)
+[ RUN      ] StaticVectorTest.Addition
+[       OK ] StaticVectorTest.Addition (0 ms)
+[ RUN      ] StaticVectorTest.DotProduct
+[       OK ] StaticVectorTest.DotProduct (0 ms)
+[ RUN      ] StaticVectorTest.ConstAccessOperator
+[       OK ] StaticVectorTest.ConstAccessOperator (0 ms)
+[----------] 4 tests from StaticVectorTest (0 ms total)
 
-[----------] 1 test from VectorTestDifferentSize
-[ RUN      ] VectorTestDifferentSize.Operations
-[       OK ] VectorTestDifferentSize.Operations (0 ms)
-[----------] 1 test from VectorTestDifferentSize (0 ms total)
+[----------] 1 test from StaticVectorTestDifferentSize
+[ RUN      ] StaticVectorTestDifferentSize.Operations
+[       OK ] StaticVectorTestDifferentSize.Operations (0 ms)
+[----------] 1 test from StaticVectorTestDifferentSize (0 ms total)
 
 [----------] Global test environment tear-down
 [==========] 5 tests from 2 test suites ran. (0 ms total)
@@ -33,15 +33,15 @@ Running main() from /usr/src/debug/gtest/googletest-1.15.2/googletest/src/gtest_
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_vector" end time: Feb 20 18:11 EET
-"test_vector" time elapsed: 00:00:00
+"test_static_vector" end time: Feb 21 15:18 EET
+"test_static_vector" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 2/3 Testing: test_block_matrix
 2/3 Test: test_block_matrix
 Command: "/home/simi/Dev/linear-algebra-lib/build/tests/test_block_matrix"
 Directory: /home/simi/Dev/linear-algebra-lib/build/tests
-"test_block_matrix" start time: Feb 20 18:11 EET
+"test_block_matrix" start time: Feb 21 15:18 EET
 Output:
 ----------------------------------------------------------
 Running main() from /usr/src/debug/gtest/googletest-1.15.2/googletest/src/gtest_main.cc
@@ -67,7 +67,7 @@ Running main() from /usr/src/debug/gtest/googletest-1.15.2/googletest/src/gtest_
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_block_matrix" end time: Feb 20 18:11 EET
+"test_block_matrix" end time: Feb 21 15:18 EET
 "test_block_matrix" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -75,7 +75,7 @@ Test Passed.
 3/3 Test: test_hybrid_vector
 Command: "/home/simi/Dev/linear-algebra-lib/build/tests/test_block_matrix"
 Directory: /home/simi/Dev/linear-algebra-lib/build/tests
-"test_hybrid_vector" start time: Feb 20 18:11 EET
+"test_hybrid_vector" start time: Feb 21 15:18 EET
 Output:
 ----------------------------------------------------------
 Running main() from /usr/src/debug/gtest/googletest-1.15.2/googletest/src/gtest_main.cc
@@ -101,8 +101,8 @@ Running main() from /usr/src/debug/gtest/googletest-1.15.2/googletest/src/gtest_
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_hybrid_vector" end time: Feb 20 18:11 EET
+"test_hybrid_vector" end time: Feb 21 15:18 EET
 "test_hybrid_vector" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Feb 20 18:11 EET
+End testing: Feb 21 15:18 EET

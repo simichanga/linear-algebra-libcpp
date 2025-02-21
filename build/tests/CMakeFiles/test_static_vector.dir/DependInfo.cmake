@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/simi/Dev/linear-algebra-lib/tests/test_vector.cpp" "tests/CMakeFiles/test_vector.dir/test_vector.cpp.o" "gcc" "tests/CMakeFiles/test_vector.dir/test_vector.cpp.o.d"
-  "" "tests/test_vector" "gcc" "tests/CMakeFiles/test_vector.dir/link.d"
+  "/home/simi/Dev/linear-algebra-lib/tests/test_static_vector.cpp" "tests/CMakeFiles/test_static_vector.dir/test_static_vector.cpp.o" "gcc" "tests/CMakeFiles/test_static_vector.dir/test_static_vector.cpp.o.d"
+  "" "tests/test_static_vector" "gcc" "tests/CMakeFiles/test_static_vector.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

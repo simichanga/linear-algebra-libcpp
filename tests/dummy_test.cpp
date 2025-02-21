@@ -1,5 +1,6 @@
 #include "../include/linear_algebra/block_matrix.hpp"
 #include <iostream>
+#include "../include/linear_algebra/hybrid_vector.hpp"
 
 using namespace linear_algebra;
 
@@ -14,17 +15,6 @@ void print(const BlockMatrix<T>& input) {
 }
 
 int main() {
-  BlockMatrix<double> m1;
-  std::cout << "Rows: " << m1.get_rows() << ", Cols: " << m1.get_cols() << '\n';
-  m1 = BlockMatrix<double>(2, 2);
-  std::cout << "Rows: " << m1.get_rows() << ", Cols: " << m1.get_cols() << '\n';
-  
-  m1[0, 0] = 1.0; m1[0, 1] = 2.0;
-  m1[1, 0] = 3.0; m1[1, 1] = 4.0;
-  
-  print(m1);
-  
-  auto m2 = m1.transpose();
-  
-  print(m2);
+  HybridVector<double, 1024> numbers(1024);
+  std::cout << "LOL!\n";
 }

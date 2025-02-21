@@ -12,7 +12,7 @@
 /home/simi/Dev/linear-algebra-lib/build/src/CMakeFiles/install.dir
 /home/simi/Dev/linear-algebra-lib/build/src/CMakeFiles/install/local.dir
 /home/simi/Dev/linear-algebra-lib/build/src/CMakeFiles/install/strip.dir
-/home/simi/Dev/linear-algebra-lib/build/tests/CMakeFiles/test_vector.dir
+/home/simi/Dev/linear-algebra-lib/build/tests/CMakeFiles/test_static_vector.dir
 /home/simi/Dev/linear-algebra-lib/build/tests/CMakeFiles/test_block_matrix.dir
 /home/simi/Dev/linear-algebra-lib/build/tests/CMakeFiles/test_hybrid_vector.dir
 /home/simi/Dev/linear-algebra-lib/build/tests/CMakeFiles/test.dir
@@ -22,3 +22,11 @@
 /home/simi/Dev/linear-algebra-lib/build/tests/CMakeFiles/install.dir
 /home/simi/Dev/linear-algebra-lib/build/tests/CMakeFiles/install/local.dir
 /home/simi/Dev/linear-algebra-lib/build/tests/CMakeFiles/install/strip.dir
+/home/simi/Dev/linear-algebra-lib/build/benchmarks/CMakeFiles/vector_matrix_benchmarks.dir
+/home/simi/Dev/linear-algebra-lib/build/benchmarks/CMakeFiles/test.dir
+/home/simi/Dev/linear-algebra-lib/build/benchmarks/CMakeFiles/edit_cache.dir
+/home/simi/Dev/linear-algebra-lib/build/benchmarks/CMakeFiles/rebuild_cache.dir
+/home/simi/Dev/linear-algebra-lib/build/benchmarks/CMakeFiles/list_install_components.dir
+/home/simi/Dev/linear-algebra-lib/build/benchmarks/CMakeFiles/install.dir
+/home/simi/Dev/linear-algebra-lib/build/benchmarks/CMakeFiles/install/local.dir
+/home/simi/Dev/linear-algebra-lib/build/benchmarks/CMakeFiles/install/strip.dir

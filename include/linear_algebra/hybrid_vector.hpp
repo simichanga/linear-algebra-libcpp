@@ -65,18 +65,21 @@ namespace linear_algebra {
       return result;
     }
 
-    template <typename V1, typename V2>
-    friend constexpr auto dot(V1&& v1, V2&& v2)
-      requires  std::same_as<std::remove_cvref_t<V1>, HybridVector> &&
-                std::same_as<std::remove_cvref_t<V2>, HybridVector> 
-    {
-      using ResultType = decltype(std::declval<T>() * std::declval<T>());
+    
+    template <typename V> // More generic
+    constexpr auto dot(const HybridVector<V>& other) const {
+      if (size() != other.size()) {
+          throw std::invalid_argument("Vector sizes must match for dot product.");
+      }
+
+      using ResultType = std::common_type_t<T, V>; // Handle different types
+
       ResultType result{};
-      for (std::size_t i = 0; i < v1.size(); ++i)
-        result += std::forward<V1>(v1)[i] * std::forward<V2>(v2)[i];
+      for (std::size_t i = 0; i < size(); ++i) {
+        result += (*this)[i] * other[i];
+      }
       return result;
     }
-    
   };
 
   template <typename T>

@@ -172,18 +172,18 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/test_vector.dir/rule:
-	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_vector.dir/rule
-.PHONY : tests/CMakeFiles/test_vector.dir/rule
+tests/CMakeFiles/test_static_vector.dir/rule:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_static_vector.dir/rule
+.PHONY : tests/CMakeFiles/test_static_vector.dir/rule
 
 # Convenience name for target.
-test_vector: tests/CMakeFiles/test_vector.dir/rule
-.PHONY : test_vector
+test_static_vector: tests/CMakeFiles/test_static_vector.dir/rule
+.PHONY : test_static_vector
 
 # fast build rule for target.
-test_vector/fast:
-	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_vector.dir/build.make tests/CMakeFiles/test_vector.dir/build
-.PHONY : test_vector/fast
+test_static_vector/fast:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_static_vector.dir/build.make tests/CMakeFiles/test_static_vector.dir/build
+.PHONY : test_static_vector/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_block_matrix.dir/rule:
@@ -261,29 +261,29 @@ test_hybrid_vector.cpp.s:
 	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hybrid_vector.dir/build.make tests/CMakeFiles/test_hybrid_vector.dir/test_hybrid_vector.cpp.s
 .PHONY : test_hybrid_vector.cpp.s
 
-test_vector.o: test_vector.cpp.o
-.PHONY : test_vector.o
+test_static_vector.o: test_static_vector.cpp.o
+.PHONY : test_static_vector.o
 
 # target to build an object file
-test_vector.cpp.o:
-	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_vector.dir/build.make tests/CMakeFiles/test_vector.dir/test_vector.cpp.o
-.PHONY : test_vector.cpp.o
+test_static_vector.cpp.o:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_static_vector.dir/build.make tests/CMakeFiles/test_static_vector.dir/test_static_vector.cpp.o
+.PHONY : test_static_vector.cpp.o
 
-test_vector.i: test_vector.cpp.i
-.PHONY : test_vector.i
+test_static_vector.i: test_static_vector.cpp.i
+.PHONY : test_static_vector.i
 
 # target to preprocess a source file
-test_vector.cpp.i:
-	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_vector.dir/build.make tests/CMakeFiles/test_vector.dir/test_vector.cpp.i
-.PHONY : test_vector.cpp.i
+test_static_vector.cpp.i:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_static_vector.dir/build.make tests/CMakeFiles/test_static_vector.dir/test_static_vector.cpp.i
+.PHONY : test_static_vector.cpp.i
 
-test_vector.s: test_vector.cpp.s
-.PHONY : test_vector.s
+test_static_vector.s: test_static_vector.cpp.s
+.PHONY : test_static_vector.s
 
 # target to generate assembly for a file
-test_vector.cpp.s:
-	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_vector.dir/build.make tests/CMakeFiles/test_vector.dir/test_vector.cpp.s
-.PHONY : test_vector.cpp.s
+test_static_vector.cpp.s:
+	cd /home/simi/Dev/linear-algebra-lib/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_static_vector.dir/build.make tests/CMakeFiles/test_static_vector.dir/test_static_vector.cpp.s
+.PHONY : test_static_vector.cpp.s
 
 # Help Target
 help:
@@ -300,16 +300,16 @@ help:
 	@echo "... test"
 	@echo "... test_block_matrix"
 	@echo "... test_hybrid_vector"
-	@echo "... test_vector"
+	@echo "... test_static_vector"
 	@echo "... test_block_matrix.o"
 	@echo "... test_block_matrix.i"
 	@echo "... test_block_matrix.s"
 	@echo "... test_hybrid_vector.o"
 	@echo "... test_hybrid_vector.i"
 	@echo "... test_hybrid_vector.s"
-	@echo "... test_vector.o"
-	@echo "... test_vector.i"
-	@echo "... test_vector.s"
+	@echo "... test_static_vector.o"
+	@echo "... test_static_vector.i"
+	@echo "... test_static_vector.s"
 .PHONY : help
 
 

@@ -1,5 +1,12 @@
-find_package(benchmark REQUIRED)
+add_executable(vector_matrix_benchmarks
+    vector_matrix_benchmark.cpp # Path relative to benchmarks/
+)
 
-add_executable(benchmark_vector benchmark_vector.cpp)
+target_link_libraries(vector_matrix_benchmarks
+    PRIVATE benchmark::benchmark
+    linear_algebra # Link to library
+)
 
-target_link_libraries(benchmark_vector PRIVATE linear_algebra benchmark::benchmark)
+target_include_directories(vector_matrix_benchmarks
+    PRIVATE ${CMAKE_SOURCE_DIR}/include  # Include from the project root
+)
