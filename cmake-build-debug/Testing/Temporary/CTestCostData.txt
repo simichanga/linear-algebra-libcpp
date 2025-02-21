@@ -1,0 +1,20 @@
+test_static_vector 10 0.000241012
+test_block_matrix 9 0.000520639
+test_hybrid_vector 9 0.000528055
+test_block_matrix_block_matrix 1 0.0041212
+test_hybrid_vector_hybrid_vector 0 0
+test_static_vector_static_vector 2 0
+test_block_matrix_construction 1 0
+test_block_matrix_element_access 1 0
+test_block_matrix_initializer_list 1 0
+test_block_matrix_matrix_operations 1 0
+test_hybrid_vector_access 0 0
+test_hybrid_vector_construction 0 0
+test_hybrid_vector_operations 0 0
+test_hybrid_vector_simd 0 0
+test_block_matrix_test_construction 3 0.000820534
+test_block_matrix_test_element_access 3 0.00159441
+test_block_matrix_test_initializer_list 3 0.000803131
+test_block_matrix_test_matrix_operations 3 0.00160196
+test_static_vector_test_static_vector 3 0.000830556
+---

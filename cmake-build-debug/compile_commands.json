@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/simi/CLionProjects/linear-algebra-libcpp/cmake-build-debug",
+  "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/simi/CLionProjects/linear-algebra-libcpp/include -g -std=c++23 -fdiagnostics-color=always -mavx2 -o tests/CMakeFiles/test_block_matrix_test_construction.dir/block_matrix/test_construction.cpp.o -c /home/simi/CLionProjects/linear-algebra-libcpp/tests/block_matrix/test_construction.cpp",
+  "file": "/home/simi/CLionProjects/linear-algebra-libcpp/tests/block_matrix/test_construction.cpp",
+  "output": "tests/CMakeFiles/test_block_matrix_test_construction.dir/block_matrix/test_construction.cpp.o"
+},
+{
+  "directory": "/home/simi/CLionProjects/linear-algebra-libcpp/cmake-build-debug",
+  "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/simi/CLionProjects/linear-algebra-libcpp/include -g -std=c++23 -fdiagnostics-color=always -mavx2 -o tests/CMakeFiles/test_block_matrix_test_element_access.dir/block_matrix/test_element_access.cpp.o -c /home/simi/CLionProjects/linear-algebra-libcpp/tests/block_matrix/test_element_access.cpp",
+  "file": "/home/simi/CLionProjects/linear-algebra-libcpp/tests/block_matrix/test_element_access.cpp",
+  "output": "tests/CMakeFiles/test_block_matrix_test_element_access.dir/block_matrix/test_element_access.cpp.o"
+},
+{
+  "directory": "/home/simi/CLionProjects/linear-algebra-libcpp/cmake-build-debug",
+  "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/simi/CLionProjects/linear-algebra-libcpp/include -g -std=c++23 -fdiagnostics-color=always -mavx2 -o tests/CMakeFiles/test_block_matrix_test_initializer_list.dir/block_matrix/test_initializer_list.cpp.o -c /home/simi/CLionProjects/linear-algebra-libcpp/tests/block_matrix/test_initializer_list.cpp",
+  "file": "/home/simi/CLionProjects/linear-algebra-libcpp/tests/block_matrix/test_initializer_list.cpp",
+  "output": "tests/CMakeFiles/test_block_matrix_test_initializer_list.dir/block_matrix/test_initializer_list.cpp.o"
+},
+{
+  "directory": "/home/simi/CLionProjects/linear-algebra-libcpp/cmake-build-debug",
+  "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/simi/CLionProjects/linear-algebra-libcpp/include -g -std=c++23 -fdiagnostics-color=always -mavx2 -o tests/CMakeFiles/test_block_matrix_test_matrix_operations.dir/block_matrix/test_matrix_operations.cpp.o -c /home/simi/CLionProjects/linear-algebra-libcpp/tests/block_matrix/test_matrix_operations.cpp",
+  "file": "/home/simi/CLionProjects/linear-algebra-libcpp/tests/block_matrix/test_matrix_operations.cpp",
+  "output": "tests/CMakeFiles/test_block_matrix_test_matrix_operations.dir/block_matrix/test_matrix_operations.cpp.o"
+},
+{
+  "directory": "/home/simi/CLionProjects/linear-algebra-libcpp/cmake-build-debug",
+  "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/simi/CLionProjects/linear-algebra-libcpp/include -g -std=c++23 -fdiagnostics-color=always -mavx2 -o tests/CMakeFiles/test_static_vector_test_static_vector.dir/static_vector/test_static_vector.cpp.o -c /home/simi/CLionProjects/linear-algebra-libcpp/tests/static_vector/test_static_vector.cpp",
+  "file": "/home/simi/CLionProjects/linear-algebra-libcpp/tests/static_vector/test_static_vector.cpp",
+  "output": "tests/CMakeFiles/test_static_vector_test_static_vector.dir/static_vector/test_static_vector.cpp.o"
+}
+]
